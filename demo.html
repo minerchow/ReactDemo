@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+    <script type="text/javascript" src="react.js"></script>
+    <script type="text/javascript" src="react-dom.js"></script>
+	<script type="text/javascript" src="browser.min.js"></script>
+</head>
+<body>
+	<div id="app"></div>
+	<script type="text/babel">
+		var Hello = React.createClass({
+			render:function(){
+				return(
+					<span>Hello world</span>
+				);
+			}
+		})
+
+		ReactDOM.render(
+			<Hello/>,document.getElementById('app')
+		)
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="react.js"></script>
+    <script type="text/javascript" src="react-dom.js"></script>
+    <script type="text/javascript" src="browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+        var MessageBox = React.createClass({
+            render:function(){
+                var submessages = [];
+                for(var ii=0; ii<10; ii++){
+                    submessages.push(
+                    <SubMessage key={'subMsg'+ii}/>
+                )
+                }
+                return(
+                    <div>{submessages}</div>
+                )
+            }
+
+        });
+
+        var SubMessage = React.createClass({
+            render:function(){
+                return(
+                    <div>
+                        <h3>这是subessage</h3>
+                    </div>
+
+                )
+            }
+        })
+
+        ReactDOM.render( <MessageBox/>,
+                document.getElementById('app'),
+                function(){
+                    console.log('渲染完成啦！！');
+                }
+        )
+</script>
+</body>
+</html>

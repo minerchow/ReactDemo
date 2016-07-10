@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="react.js"></script>
+    <script type="text/javascript" src="react-dom.js"></script>
+    <script type="text/javascript" src="browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+  var MessageBox = React.createClass({
+      getInitialState:function(){
+          return {
+              isVisible : true,
+              titleMessage : 'hello'
+          }
+      },
+      render:function(){
+          var styleObj = {
+              display:this.state.isVisible ? 'true' : 'false'
+          }
+
+          return (
+              <div>
+                <h1 style={styleObj}>{this.state.titleMessage}</h1>
+                <Submessage/>
+              </div>
+          )
+      }
+  })
+
+  var Submessage = React.createClass({
+      render:function(){
+          return (
+                  <h3>写代码很有意思</h3>
+          )
+      }
+  });
+  var messageBox = ReactDOM.render( <MessageBox/>,
+          document.getElementById('app'),
+          function(){
+              console.log('渲染完成啦！！');
+          }
+  )
+</script>
+</body>
+</html>
