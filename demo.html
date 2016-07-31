@@ -1,25 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-    <script type="text/javascript" src="react.js"></script>
-    <script type="text/javascript" src="react-dom.js"></script>
+	<script type="text/javascript" src="react.js"></script>
+	<script type="text/javascript" src="react-dom.js"></script>
 	<script type="text/javascript" src="browser.min.js"></script>
 </head>
 <body>
-	<div id="app"></div>
+	<div id="example"></div>
 	<script type="text/babel">
-		var Hello = React.createClass({
-			render:function(){
-				return(
-					<span>Hello world</span>
-				);
-			}
-		})
-
+		var names = ["html","css","js"];
 		ReactDOM.render(
-			<Hello/>,document.getElementById('app')
+			<div>
+			{
+				names.map(function(name){
+					return <div>hello {name}</div>	
+				})
+			}
+			</div>,document.getElementById('example')
 		)
 	</script>
 </body>
